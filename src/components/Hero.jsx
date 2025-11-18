@@ -55,8 +55,30 @@ export default function Hero({ onConnect }) {
           </button>
         </div>
 
-        {/* Public activity at the top */}
-        <div className="mt-6 rounded-2xl border border-emerald-400/20 bg-slate-900/60">
+        {/* Direct headline */}
+        <div className="mt-8 md:mt-10">
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-white">
+            Recover your unclaimed SOL — fast, transparent, verifiable.
+          </h1>
+          <p className="mt-3 text-emerald-100/90 text-base md:text-lg">
+            Connect your wallet, review claimable accounts, and cash out in seconds. Fee 14% — optional donation.
+          </p>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <button
+              onClick={onConnect}
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 text-slate-900 hover:bg-emerald-400 transition px-5 py-3 font-medium"
+            >
+              <Wallet className="h-5 w-5" />
+              Connect Wallet
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            <div className="text-sm text-emerald-200/80">Sem surpresas: taxa mostrada antecipadamente</div>
+          </div>
+        </div>
+
+        {/* Public activity after headline + connect wallet */}
+        <div className="mt-8 rounded-2xl border border-emerald-400/20 bg-slate-900/60">
           <div className="px-5 py-4 border-b border-emerald-400/10 flex items-center justify-between flex-wrap gap-3">
             <div className="text-emerald-200 font-medium">Public Activity</div>
             <div className="flex items-center gap-4 text-sm">
@@ -89,28 +111,6 @@ export default function Hero({ onConnect }) {
               <li className="px-5 py-6 text-center text-emerald-200/70">No activity yet</li>
             )}
           </ul>
-        </div>
-
-        {/* Direct headline */}
-        <div className="mt-8 md:mt-10">
-          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-white">
-            Recover your unclaimed SOL — fast, transparent, verifiable.
-          </h1>
-          <p className="mt-3 text-emerald-100/90 text-base md:text-lg">
-            Connect your wallet, review claimable accounts, and cash out in seconds. Fee 14% — optional donation.
-          </p>
-
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <button
-              onClick={onConnect}
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 text-slate-900 hover:bg-emerald-400 transition px-5 py-3 font-medium"
-            >
-              <Wallet className="h-5 w-5" />
-              Connect Wallet
-              <ArrowRight className="h-5 w-5" />
-            </button>
-            <div className="text-sm text-emerald-200/80">Sem surpresas: taxa mostrada antecipadamente</div>
-          </div>
         </div>
       </div>
 
