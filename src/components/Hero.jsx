@@ -22,6 +22,18 @@ export default function Hero({ onConnect }) {
 
   return (
     <section className="relative overflow-hidden">
+      {/* Bold violet → gold hero gradient backdrop */}
+      <div className="pointer-events-none absolute inset-0">
+        {/* Large diagonal sweep */}
+        <div className="absolute -inset-24 bg-gradient-to-br from-violet-700/35 via-fuchsia-500/20 to-amber-400/35 blur-2xl" />
+        {/* Soft radial glow at top-right (violet) */}
+        <div className="absolute -top-40 -right-28 h-[34rem] w-[34rem] rounded-full bg-violet-600/35 blur-3xl opacity-70" />
+        {/* Soft radial glow at bottom-left (gold) */}
+        <div className="absolute -bottom-40 -left-32 h-[30rem] w-[30rem] rounded-full bg-amber-400/30 blur-3xl opacity-70" />
+        {/* Subtle vignette to keep content readable */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-slate-950/40 to-slate-950/70" />
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-6 pb-10 md:pb-14">
         {/* Top bar */}
         <div className="flex items-center justify-between">
@@ -67,20 +79,28 @@ export default function Hero({ onConnect }) {
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <button
               onClick={onConnect}
-              className="inline-flex items-center gap-2 rounded-xl bg-violet-500 text-slate-900 hover:bg-violet-400 transition px-5 py-3 font-medium"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 via-fuchsia-400 to-amber-400 text-slate-900 hover:from-violet-400 hover:via-fuchsia-300 hover:to-amber-300 transition px-5 py-3 font-medium shadow shadow-violet-500/10"
             >
               <Wallet className="h-5 w-5" />
               Connect Wallet
               <ArrowRight className="h-5 w-5" />
             </button>
-            <div className="text-sm text-violet-200/80">Sem surpresas: taxa mostrada antecipadamente</div>
+            <div className="text-sm text-violet-200/80 inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+              Sem surpresas: taxa mostrada antecipadamente
+            </div>
           </div>
         </div>
 
         {/* Public activity after headline + connect wallet */}
-        <div className="mt-8 rounded-2xl border border-violet-400/20 bg-slate-900/60">
+        <div className="mt-8 rounded-2xl border border-violet-400/20 bg-slate-900/60 backdrop-blur">
           <div className="px-5 py-4 border-b border-violet-400/10 flex items-center justify-between flex-wrap gap-3">
-            <div className="text-violet-200 font-medium">Public Activity</div>
+            <div className="text-violet-200 font-medium inline-flex items-center gap-2">
+              Public Activity
+              <span className="inline-flex items-center gap-1 text-xs rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-200 px-2 py-0.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" /> Live
+              </span>
+            </div>
             <div className="flex items-center gap-4 text-sm">
               <div className="inline-flex items-center gap-2 rounded-lg bg-slate-800/70 px-3 py-1.5 border border-violet-400/10">
                 <span className="text-violet-300/80">Accounts closed</span>
@@ -114,7 +134,8 @@ export default function Hero({ onConnect }) {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/30 via-slate-900/60 to-slate-950" />
+      {/* Subtle bottom divider with violet → gold fade */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-violet-500/30 via-fuchsia-400/30 to-amber-300/30" />
     </section>
   )
 }

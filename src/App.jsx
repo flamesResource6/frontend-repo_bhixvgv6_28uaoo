@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-emerald-50">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-violet-50">
       <Hero onConnect={() => {
         const el = document.getElementById('connect-section')
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
