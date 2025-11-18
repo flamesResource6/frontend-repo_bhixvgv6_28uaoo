@@ -63,47 +63,47 @@ export default function ConnectFlow() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="rounded-2xl border border-emerald-400/20 bg-slate-900/60 p-6">
-          <div className="flex items-center gap-3 text-emerald-200">
-            <div className="h-8 w-8 rounded-lg bg-emerald-500/20 flex items-center justify-center"><span>1</span></div>
+        <div className="rounded-2xl border border-violet-400/20 bg-slate-900/60 p-6">
+          <div className="flex items-center gap-3 text-violet-200">
+            <div className="h-8 w-8 rounded-lg bg-violet-500/20 flex items-center justify-center"><span>1</span></div>
             Connect
           </div>
-          <p className="mt-2 text-emerald-200/70 text-sm">Fast connect with Phantom or Solflare.</p>
-          <button onClick={connect} className="mt-4 inline-flex items-center gap-2 rounded-xl bg-emerald-500 text-slate-900 hover:bg-emerald-400 transition px-4 py-2 font-medium">
+          <p className="mt-2 text-violet-200/70 text-sm">Fast connect with Phantom or Solflare.</p>
+          <button onClick={connect} className="mt-4 inline-flex items-center gap-2 rounded-xl bg-violet-500 text-slate-900 hover:bg-violet-400 transition px-4 py-2 font-medium">
             <Wallet className="h-5 w-5" /> Connect Wallet
           </button>
           {connected && (
-            <div className="mt-3 text-xs text-emerald-300 break-all">{wallet}</div>
+            <div className="mt-3 text-xs text-violet-300 break-all">{wallet}</div>
           )}
         </div>
-        <div className="rounded-2xl border border-emerald-400/20 bg-slate-900/60 p-6">
-          <div className="flex items-center gap-3 text-emerald-200">
-            <div className="h-8 w-8 rounded-lg bg-emerald-500/20 flex items-center justify-center"><span>2</span></div>
+        <div className="rounded-2xl border border-violet-400/20 bg-slate-900/60 p-6">
+          <div className="flex items-center gap-3 text-violet-200">
+            <div className="h-8 w-8 rounded-lg bg-violet-500/20 flex items-center justify-center"><span>2</span></div>
             Select
           </div>
-          <p className="mt-2 text-emerald-200/70 text-sm">Automatically detect claimable accounts.</p>
+          <p className="mt-2 text-violet-200/70 text-sm">Automatically detect claimable accounts.</p>
           <ul className="mt-3 space-y-2">
             {accounts.map((a, i) => (
-              <li key={i} className="flex items-center justify-between rounded-lg border border-emerald-400/20 px-3 py-2 text-emerald-100">
+              <li key={i} className="flex items-center justify-between rounded-lg border border-violet-400/20 px-3 py-2 text-violet-100">
                 <span className="font-mono">{a.address}</span>
                 <span>{a.amount} SOL</span>
               </li>
             ))}
-            {accounts.length === 0 && <li className="text-emerald-200/60 text-sm">Connect wallet to view</li>}
+            {accounts.length === 0 && <li className="text-violet-200/60 text-sm">Connect wallet to view</li>}
           </ul>
         </div>
-        <div className="rounded-2xl border border-emerald-400/20 bg-slate-900/60 p-6">
-          <div className="flex items-center gap-3 text-emerald-200">
-            <div className="h-8 w-8 rounded-lg bg-emerald-500/20 flex items-center justify-center"><span>3</span></div>
+        <div className="rounded-2xl border border-violet-400/20 bg-slate-900/60 p-6">
+          <div className="flex items-center gap-3 text-violet-200">
+            <div className="h-8 w-8 rounded-lg bg-violet-500/20 flex items-center justify-center"><span>3</span></div>
             Claim
           </div>
-          <p className="mt-2 text-emerald-200/70 text-sm">Fee: 1% — optional donation at checkout.</p>
+          <p className="mt-2 text-violet-200/70 text-sm">Fee: 1% — optional donation at checkout.</p>
           <div className="mt-4 text-white text-2xl font-semibold">{total.toFixed(2)} SOL</div>
-          <button onClick={claim} disabled={!connected || accounts.length === 0} className="mt-4 inline-flex items-center gap-2 rounded-xl bg-emerald-500 text-slate-900 hover:bg-emerald-400 disabled:opacity-50 transition px-4 py-2 font-medium">
+          <button onClick={claim} disabled={!connected || accounts.length === 0} className="mt-4 inline-flex items-center gap-2 rounded-xl bg-violet-500 text-slate-900 hover:bg-violet-400 disabled:opacity-50 transition px-4 py-2 font-medium">
             Claim Now <ArrowRight className="h-5 w-5" />
           </button>
           {connected && (
-            <div className="mt-3 inline-flex items-center gap-2 text-emerald-300 text-sm">
+            <div className="mt-3 inline-flex items-center gap-2 text-violet-300 text-sm">
               <CheckCircle2 className="h-4 w-4" /> Wallet connected — real-time feedback enabled
             </div>
           )}
